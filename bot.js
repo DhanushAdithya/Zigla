@@ -9,6 +9,10 @@ client.on('message', msg => {
     if (msg.content === 'ping') {
         msg.reply('Pong!');
     }
+
+    if (message.content === 'avatar') {
+        msg.reply(msg.author.avatarURL);
+    }
 });
 
 client.login(process.env.BOT_TOKEN);
