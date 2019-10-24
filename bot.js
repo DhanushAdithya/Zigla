@@ -11,4 +11,4 @@ client.on('message', msg => {
     }
 });
 
-client.login('NjM2NTQ1NzYyMjQyNTkyNzY5.XbFk0w.zAQLiNIQB8HI9HtxAfK3QQYMlB0')
+client.login('NjM2NTQ1NzYyMjQyNTkyNzY5.XbFyNQ.uWe4N-qrbW3BSRZtTOoUC83Gbz0')
