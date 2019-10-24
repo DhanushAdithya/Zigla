@@ -1,7 +1,7 @@
 {
   "name": "zigla",
   "version": "1.0.0",
-  "description": "",
+  "description": "A bot",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
