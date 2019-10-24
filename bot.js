@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const prefix = 'Zigla, ' || 'z! ';
 
 client.on('ready', () => {
-    console.log(`Ready! ${client.user.tag}`);
+    console.log(`Ready! ${client.user.tag} !`);
 });
 
 client.on('message', msg => {
