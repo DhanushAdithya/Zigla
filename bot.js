@@ -10,7 +10,7 @@ client.on('message', msg => {
         msg.reply('Pong!');
     }
 
-    if (message.content === 'avatar') {
+    if (msg.content === 'avatar') {
         msg.reply(msg.author.avatarURL);
     }
 });
