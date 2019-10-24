@@ -5,4 +5,4 @@ client.once('ready', () => {
     console.log(`Ready! ${client.user.tag}`);
 });
 
-client.login('NjM2NTQ1NzYyMjQyNTkyNzY5.XbF35A.ihH5XBopBK3Vk530x_BCQ3mx5_I');
+client.login('NjM2NTQ1NzYyMjQyNTkyNzY5.XbF4eg.fpBduLuwbyFWda5o6v8_qMqots4');
