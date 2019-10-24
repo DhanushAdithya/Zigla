@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const prefix = 'z!' || 'Zigla, ';
+const prefix = 'z!';
 
 client.on('ready', () => {
     console.log(`Ready! ${client.user.tag} !`);
