@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+console.log(`${client.user.email}`)
+
 client.on('ready', () => {
     console.log(`Ready! ${client.user.tag}`);
 });
