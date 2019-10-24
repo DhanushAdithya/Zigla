@@ -1,18 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const prefix = 'z!';
-
 client.on('ready', () => {
     console.log(`Ready! ${client.user.tag} !`);
 });
 
 client.on('message', msg => {
-    if ((msg.content).toLowerCase() === 'ping') {
+    if (msg.content === 'ping') {
         msg.reply('Pong!');
-    }
-    if (msg.content === prefix + 'help') {
-        msg.reply('Working on it :grin:')
     }
 });
 
