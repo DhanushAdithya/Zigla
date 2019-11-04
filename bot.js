@@ -6,8 +6,12 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    if (msg.content === 'ping') {
+    if ((msg.content).toLowerCase() === 'ping') {
         msg.reply('Pong!');
+    }
+
+    if (msg.content === 'hi') {
+        msg.reply('Hello!');
     }
 
     if (msg.content === 'avatar') {
