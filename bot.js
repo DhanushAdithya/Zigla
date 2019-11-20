@@ -17,11 +17,15 @@ client.on('message', message => {
             img = data.message
         })
         .catch(err => console.warn(err))
+
+    const embed = new Discord.RichEmbed()
+        .setColor(0x00AE86)
+        .setImage(img)
+
+    console.log(img)
     let msg = message.content;
-    if (msg === `${prefix}dog`) {
-        message.channel.send('', {
-            files: [img]
-        });
+    if (msg === "dog") {
+        message.channel.send(embed);
     }
 });
 
