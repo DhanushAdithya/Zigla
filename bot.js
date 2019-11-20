@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const axios = require('axios');
 const client = new Discord.Client();
 
+const embed = new Discord.RichEmbed();
+
 const prefix = 'z#'
 
 client.on('ready', () => {
@@ -9,22 +11,16 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    var img;
-
     axios.get('https://dog.ceo/api/breeds/image/random')
         .then(res => res.data)
         .then(data => {
-            img = data.message
+            embed.setColor(0x00AE86)
+                .setImage(data.message)
         })
         .catch(err => console.warn(err))
 
-    const embed = new Discord.RichEmbed()
-        .setColor(0x00AE86)
-        .setImage(img)
-
-    console.log(img)
     let msg = message.content;
-    if (msg === "dog") {
+    if (msg === `${prefix}dog`) {
         message.channel.send(embed);
     }
 });
