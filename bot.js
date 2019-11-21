@@ -27,7 +27,7 @@ client.on('message', message => {
                 embed
                     .setColor(0x00AE86)
                     .setImage(data.message)
-                    .setDescription(`Breed:`, l)
+                    .setDescription(`**Breed**: ${l}`)
             }
         })
         .catch(err => console.warn(err))
