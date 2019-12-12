@@ -1,11 +1,13 @@
-const helps = `**Fun Commands**
-z#pup - Get a puppy
-z#avatar - Get your Discord avatar with its link
-z#ping - Pong!
-`
+const Discord = require('discord.js');
+const embed = new Discord.RichEmbed();
 
 exports.run = (client, message, args) => {
-    message.channel.send(helps).catch(err => console.error(err))
+    embed
+        .setColor(0xFFFFFF)
+        .setAuthor(message.member.displayName)
+        .setThumbnail(message.author.avatarURL)
+        .setDescription('\n**Fun Commands**\n`z#pup` - Get a puppy\n`z#avatar` - Get your Discord avatar with its link\n`z#ping` - Pong!\n')
+    message.send(embed).catch(err => console.error(err))
 }
 
 exports.help = {
