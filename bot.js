@@ -3,8 +3,6 @@ const fs = require('fs');
 const Enmap = require('enmap');
 const client = new Discord.Client();
 
-const embed = new Discord.RichEmbed();
-
 const prefix = 'z#';
 
 client.commands = new Enmap();
