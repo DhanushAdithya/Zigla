@@ -1,5 +1,5 @@
 exports.run = (client, message, args) => {
-    message.channel.send('Pong!').catch(err => console.error(err))
+    message.reply('Pong!').catch(err => console.error(err))
 };
 
 exports.help = {

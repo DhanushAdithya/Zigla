@@ -54,26 +54,12 @@ client.on('message', message => {
     // }
 });
 
-// client.on('message', msg => {
-//     if ((msg.content).toLowerCase() === 'ping') {
-//         msg.reply('Pong!');
-//     }
-
-//     if (msg.content === `${prefix}hi`) {
-//         msg.reply('Hello!');
-//     }
-
-//     if (msg.content === 'avatar') {
-//         msg.reply(msg.author.avatarURL);
-//     }
-// });
-
 fs.readdir('./commands/', async (err, files) => {
     if (err) return console.error(err);
 
     files.forEach(file => {
         if (!file.endsWith('.js')) return;
-        let props = reuire(`./commands/${file}`);
+        let props = require(`./commands/${file}`);
         let cmdName = file.split('.')[0];
         console.log(`Loaded cmd : ${cmdName}`);
         client.commands.set(cmdName, props);
