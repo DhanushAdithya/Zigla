@@ -1,24 +1,25 @@
 {
-  "name": "zigla",
-  "version": "1.0.0",
-  "description": "A bot",
-  "main": "bot.js",
-  "scripts": {
-    "start": "node bot.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DhanushAdithya/Zigla.git"
-  },
-  "keywords": [],
-  "author": "Dhanush Adithya",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DhanushAdithya/Zigla/issues"
-  },
-  "homepage": "https://github.com/DhanushAdithya/Zigla#readme",
-  "dependencies": {
-    "axios": "^0.19.0",
-    "discord.js": "^11.5.1"
-  }
+    "name": "zigla",
+    "version": "1.0.0",
+    "description": "A bot",
+    "main": "bot.js",
+    "scripts": {
+        "start": "node bot.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DhanushAdithya/Zigla.git"
+    },
+    "keywords": [],
+    "author": "Dhanush Adithya",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DhanushAdithya/Zigla/issues"
+    },
+    "homepage": "https://github.com/DhanushAdithya/Zigla#readme",
+    "dependencies": {
+        "axios": "^0.19.0",
+        "discord.js": "^11.5.1",
+        "enmap": "^5.2.3"
+    }
 }
