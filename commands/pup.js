@@ -3,7 +3,8 @@ const axios = require('axios');
 
 const embed = new Discord.RichEmbed();
 
-axios.get('https://dog.ceo/api/breeds/image/random')
+exports.run = (client, message, args) => {
+    axios.get('https://dog.ceo/api/breeds/image/random')
     .then(res => res.data)
     .then(data => {
         l = (data.message).split('/') 
@@ -23,8 +24,7 @@ axios.get('https://dog.ceo/api/breeds/image/random')
         }
     })
     .catch(err => console.warn(err))
-
-exports.run = (client, message, args) => {
+    
     message.channel.send(embed).catch(err => console.error(err))
 };
 
