@@ -1,7 +1,8 @@
-const Discord = require('discord.js');
+const {
+    RichEmbed
+} = require('discord.js')
+const embed = new RichEmbed()
 const axios = require('axios');
-
-const embed = new Discord.RichEmbed();
 
 exports.run = (client, message, args) => {
 
