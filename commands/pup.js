@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
         if (l.includes('-')) {
             l = l.split('-').map(element => element.charAt(0).toUpperCase() + element.slice(1)).join(' ')
             embed
-                .setColor(0x00AE86)
+                .setColor(0x00AE86) 
                 .setImage(data.message)
                 .setDescription(`**Breed**: ${l}`)
         } else {
