@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const axios = require('axios');
 
-const embed = new Discord.RichEmbed();
+const embed = new Discord.RichEmbed();    
 
 exports.run = (client, message, args) => {
 
