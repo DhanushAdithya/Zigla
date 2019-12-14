@@ -1,5 +1,10 @@
+const Discord = require('discord.js');
+
+const embed = new Discord.RichEmbed();
+
 exports.run = (client, message, args) => {
-    message.reply(message.author.avatarURL).catch(err => console.error(err))
+    embed.setColor(0x00AE86).setImage(message.author.avatarURL)
+    message.reply(embed).catch(err => console.error(err))
 };
 
 exports.help = {
