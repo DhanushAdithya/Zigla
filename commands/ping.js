@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
         .setColor()
         .setDescription(`🏓 Pong ! 
         Lag rate      : ${Math.floor(msg.createdAt - message.createdAt)}ms
-        API lag rate  : ${client.ping}ms`)
+        API lag rate  : ${Math.floor(client.ping)}ms`)
         .setTimestamp()
     msg.edit(embed)
         .catch(err => console.warn(err))
