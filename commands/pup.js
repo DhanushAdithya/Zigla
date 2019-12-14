@@ -6,7 +6,7 @@ const embed = new Discord.RichEmbed();
 axios.get('https://dog.ceo/api/breeds/image/random')
     .then(res => res.data)
     .then(data => {
-        l = (data.message).split('/')
+        l = (data.message).split('/') 
         l = l[4]
         if (l.includes('-')) {
             l = l.split('-').map(element => element.charAt(0).toUpperCase() + element.slice(1)).join(' ')
