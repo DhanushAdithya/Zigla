@@ -1,8 +1,10 @@
-const helps = '**Zigla Bot Help**\n__Fun Commands__\n\t`z#pup` - Get a puppy\n\t`z#avatar` - Get your Discord avatar with its link\n\t`z#ping` - Pong!\n';
-exports.run = (client, message, args) => {
-    message.channel.send(helps).catch(err => console.error(err))
-}
+const fs = require('fs')
 
-exports.help = {
-    name: 'help'
+module.exports = {
+    name: 'help',
+    description: 'Help command',
+    execute(message, args) {
+        const files = fs.readdirSync('./commands').filter(file => file.endsWith('.js') && file !== 'help.js')
+        message.channel.send(`[${files.join(', ')}]`)
+    }
 }
