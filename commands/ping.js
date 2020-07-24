@@ -12,10 +12,6 @@ module.exports = {
                 name: 'Lag Rate      :',
                 value: `${Math.floor(msg.createdAt - message.createdAt)}ms`,
                 inline: true
-            }, {
-                name: 'API Lag Rate  :',
-                value: `${Math.floor(message.createdAt)}ms`,
-                inline: true
             }],
             timestamp: new Date(),
             thumbnail: `${message.author.displayAvatarURL()}`
