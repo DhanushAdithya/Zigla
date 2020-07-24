@@ -1,3 +1,5 @@
+const { Embed } = require('../assets')
+
 module.exports = {
     name: 'ping',
     description: 'Pong!',
@@ -20,9 +22,6 @@ module.exports = {
                 url: `${message.author.avatarURL}`
             }
         }
-        msg.edit({
-            embed: ping_embed
-        })
-            .catch(err => console.warn(err))
+        msg.edit(Embed(ping_embed))
     }
 }
