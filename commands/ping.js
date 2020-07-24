@@ -18,9 +18,7 @@ module.exports = {
                 inline: true
             }],
             timestamp: new Date(),
-            thumbnail: {
-                url: `${message.author.avatarURL}`
-            }
+            thumbnail: `${message.author.displayAvatarURL()}`
         }
         msg.edit(Embed(ping_embed))
     }
