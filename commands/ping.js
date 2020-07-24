@@ -20,6 +20,7 @@ module.exports = {
             timestamp: new Date(),
             thumbnail: `${message.author.displayAvatarURL()}`
         }
-        msg.edit(Embed(ping_embed))
+        msg.delete()
+        message.channel.send(Embed(ping_embed))
     }
 }
