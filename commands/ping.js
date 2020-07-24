@@ -14,7 +14,7 @@ module.exports = {
                 inline: true
             }, {
                 name: 'API Lag Rate  :',
-                value: `${Math.floor(client.ping)}ms`,
+                value: `${Math.floor(message.createdAt)}ms`,
                 inline: true
             }],
             timestamp: new Date(),
