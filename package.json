@@ -19,7 +19,6 @@
     "homepage": "https://github.com/DhanushAdithya/Zigla#readme",
     "dependencies": {
         "axios": "^0.19.0",
-        "discord.js": "^11.5.1",
-        "enmap": "^5.2.3"
+        "discord.js": "^11.5.1"
     }
 }

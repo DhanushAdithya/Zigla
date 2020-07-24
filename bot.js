@@ -1,34 +1,38 @@
-const Discord = require('discord.js');
-const fs = require('fs');
-const Enmap = require('enmap');
-const client = new Discord.Client();
+const fs = require('fs')
+const Discord = require('discord.js')
+const {
+    prefix,
+    token
+} = require('./config.json')
 
-client.commands = new Enmap();
+const client = new Discord.Client()
+client.commands = new Discord.Collection()
 
-fs.readdir('./events/', (err, files) => {
-    if (err) return console.error(err);
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
 
-    files.forEach(file => {
-        if (!file.endsWith('.js')) return;
-        let evt = require(`./events/${file}`);
-        let evtName = file.split('.')[0];
-        console.log(`Loaded evt : ${evtName}`);
-        client.on(evtName, evt.bind(null, client));
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`)
+    client.commands.set(command.name, command)
+}
 
-    });
+client.once('ready', () => {
+    console.log(`Ready player ${client.user.username} as ${client.user.tag}`)
 })
 
-fs.readdir('./commands/', async (err, files) => {
-    if (err) return console.error(err);
+client.on('message', message => {
+    if (!message.content.startsWith(prefix) || message.author.bot) return
 
-    files.forEach(file => {
-        if (!file.endsWith('.js')) return;
-        let props = require(`./commands/${file}`);
-        let cmdName = file.split('.')[0];
-        console.log(`Loaded cmd : ${cmdName}`);
-        client.commands.set(cmdName, props);
+    const args = message.content.slice(prefix.length).trim().split(/ +/)
+    const command = args.shift().toLowerCase()
 
-    });
+    if (!client.commands.has(command)) message.react('🤷')
+
+    try {
+        client.commands.get(command).execute(message, args)
+    } catch (error) {
+        console.log(error)
+    }
+
 })
 
-client.login(process.env.BOT_TOKEN);
+client.login(token)
