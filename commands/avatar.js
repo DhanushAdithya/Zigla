@@ -1,13 +1,18 @@
-const {
-    RichEmbed
-} = require('discord.js')
-const embed = new RichEmbed()
-
-exports.run = (client, message, args) => {
-    embed.setColor(0x00AE86).setImage(message.author.avatarURL)
-    message.channel.send(embed).catch(err => console.error(err))
-};
-
-exports.help = {
-    name: 'avatar'
+module.exports = {
+    name: 'avatar',
+    description: 'Shows the avatar of the user',
+    async execute(message, args) {
+        try {
+            if (message.mentions.users.first()) {
+                message.channel.send(message.mentions.users.first().displayAvatarURL())
+            } else if (!args[0]) {
+                message.channel.send(message.author.displayAvatarURL())
+            } else {
+                let t = await message.guild.members.fetch(args[0])
+                message.channel.send(t.user.displayAvatarURL())
+            }
+        } catch (e) {
+            message.channel.send('Error displaying the avatar')
+        }
+    }
 }
