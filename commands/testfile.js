@@ -1,4 +1,4 @@
-const db = require('../assets/firebase')
+const db = require('../assets/firebase').db
 
 module.exports = {
     name: 'testfile',
